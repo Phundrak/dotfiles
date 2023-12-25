@@ -83,7 +83,7 @@ alias wget='wget --hsts-file=$XDG_DATA_HOME/wget-hsts'
 PATH="/usr/lib/xfce-polkit/:$PATH"
 PATH="$HOME/.cabal/bin:$PATH"
 PATH="$GEM_HOME/ruby/2.6.0/bin:$PATH"
-PATH="$GEM_HOME/ruby/2.6.0/bin:$PATH"
+PATH="$GEM_HOME/ruby/3.0.0/bin:$PATH"
 PATH="$GOPATH/bin:$PATH"
 PATH="${CARGO_HOME}/bin:$PATH"
 PATH="$HOME/Android/Sdk/tools/bin:$PATH"

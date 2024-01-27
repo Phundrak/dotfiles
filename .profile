@@ -12,6 +12,9 @@ export NAME="Lucien Cartier-Tilet"
 export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"
 export LSP_USE_PLISTS=true
 
+SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+export SSH_AUTH_SOCK
+
 export HISTFILE="${XDG_STATE_HOME}/bash/history"
 export _Z_DATA="$XDG_DATA_HOME"/z
 export WINEPREFIX="$XDG_DATA_HOME"/wine

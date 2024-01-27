@@ -4,7 +4,7 @@ _pkgname=eask
 _orgname=emacs-eask
 _nodepkgname=cli
 pkgname="nodejs-${_pkgname}"
-pkgver=0.9.2
+pkgver=0.9.3
 pkgrel=1
 pkgdesc="Command-line tool for building and testing Emacs Lisp packages"
 url="https://github.com/${_orgname}/${_pkgname}"
@@ -13,7 +13,7 @@ arch=("any")
 depends=("nodejs")
 makedepends=("npm")
 source=("https://registry.npmjs.org/@${_orgname}/${_nodepkgname}/-/${_nodepkgname}-${pkgver}.tgz")
-sha256sums=('731d02178f9a364af7bcc59e400896ba0162db7b585959459d093a162f79e4c8')
+sha256sums=('1f3d948d89544c7680f882c9dee72f121a500947a42aa14b785ac949f729a3d0')
 noextract=("$_pkgname-$pkgver.tgz")
 
 prepare() {
@@ -24,5 +24,4 @@ package() {
   npm i --location=global --cache "${srcdir}/npm-cache" --prefix "$pkgdir/usr" "$srcdir/$_nodepkgname-$pkgver.tgz"
   install -Dm644 package/COPYING "$pkgdir/usr/share/licenses/${_pkgname}/COPYING"
   install -Dm644 package/README.md "$pkgdir/usr/share/doc/${_pkgname}/README.md"
-  # install -Dm644 <(nps eask) "$pkgdir/usr/share/bash-completion/completions/$_pkgname"
 }

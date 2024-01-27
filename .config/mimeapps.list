@@ -100,3 +100,4 @@ x-scheme-handler/msteams=teams.desktop
 application/x-mobipocket-ebook=FBReader.desktop
 application/json=emacsclient.desktop
 modrinth=modrinth-app-handler.desktop
+x-scheme-handler/heroic=heroic.desktop

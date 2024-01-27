@@ -5,3 +5,5 @@
 org/*.org
 .config/fish/private.fish
 org/roam/*
+.local/share/gnupg/*
+.profile.private

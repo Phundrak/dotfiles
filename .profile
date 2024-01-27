@@ -66,6 +66,8 @@ export MANPAGER='less'
 export BROWSER=firefox
 export XMODIFIERS=
 
+export DOCKER_HOST="unix://$XDG_RUNTIME_DIR/podman/podman.sock"
+
 LESS_TERMCAP_mb="$(printf '\e[1;32m')"
 LESS_TERMCAP_md="$(printf '\e[1;32m')"
 LESS_TERMCAP_me="$(printf '\e[0m')"

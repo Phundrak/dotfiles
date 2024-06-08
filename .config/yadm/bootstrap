@@ -210,7 +210,7 @@ pass \
 pdfpc \
 ripgrep \
 rsync \
-scrot \
+flameshot \
 tealdeer \
 tmux \
 tree \
@@ -243,10 +243,10 @@ for pkg in $APPSPKG
     paru -S --skipreview --needed $pkg
 end
 
-cd /home/phundrak/Documents/code/PKGBUILDs/emacs && makepkg -si; cd ..
-cd /home/phundrak/Documents/code/PKGBUILDs/nsxiv && makepkg -si; cd ..
-cd /home/phundrak/Documents/code/PKGBUILDs/pumopm-git && makepkg -si; cd ..
-cd /home/phundrak/Documents/code/PKGBUILDs/sent && makepkg -si; cd ..
+cd /home/phundrak/Documents/code/PKGBUILDs/emacs && makepkg -si && cd
+cd /home/phundrak/Documents/code/PKGBUILDs/nsxiv && makepkg -si && cd
+cd /home/phundrak/Documents/code/PKGBUILDs/pumopm-git && makepkg -si && cd
+cd /home/phundrak/Documents/code/PKGBUILDs/sent && makepkg -si && cd
 
 mkdir -p $HOME/.config/fish
 mkdir -p $HOME/.config/gtk-2.0
@@ -294,11 +294,6 @@ printf '\n\n==== Tangling picom.org\n\n' && \
 emacs -q --batch --eval '(require \'ob-tangle)' \
 --eval '(setq org-confirm-babel-evaluate nil)' \
 --eval '(org-babel-tangle-file "~/org/config/picom.org")'
-
-printf '\n\n==== Tangling rustfmt.org\n\n' && \
-emacs -q --batch --eval '(require \'ob-tangle)' \
---eval '(setq org-confirm-babel-evaluate nil)' \
---eval '(org-babel-tangle-file "~/org/config/rustfmt.org")'
 
 printf '\n\n==== Tangling stumpwm.org\n\n' && \
 emacs -q --batch --eval '(require \'ob-tangle)' \
@@ -376,10 +371,9 @@ rustup default stable
 rustup toolchain install nightly
 
 printf "\n# Add rust utilities ##########################################################\n\n"
-cargo install rustfmt racer
+cargo install rustfmt
 
 rustup component add rust-src
-rustup component add rls
 rustup component add clippy
 
 printf "\n# Installing fisher ###########################################################\n\n"
